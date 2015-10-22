@@ -1,0 +1,29 @@
+SYSTEM = H2 
+NWRITE = 3  
+
+ISTART = 0   # 0=new, 1=wave, 2=same cutoff&latt (1&2 need WAVECAR file)
+ICHARG = 2   # 0=charge from wave, 1=charge from CHGCAR, 2=atom superpos.
+
+PREC=High
+
+ENCUT = 500
+#NGX = 80
+#NGY = 80
+#NGZ = 80
+#NGXF = 80
+#NGYF = 80
+#NGZF = 80
+
+LPAR = .TRUE.
+NPAR = 8 
+
+IALGO = 48
+LREAL = A  
+NELMIN = 4   
+BMIX = 2.0  
+MAXMIX = 50   
+
+ISMEAR = -1 # fermi dirac smearing
+SIGMA = 0.028437231919844923 # 330K
+
+
