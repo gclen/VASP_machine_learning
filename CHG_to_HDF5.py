@@ -2,6 +2,7 @@
 
 import numpy as np
 import os
+import h5py
 
 def read_CHG_file():
 
@@ -38,10 +39,24 @@ def parse_CHG_header():
 
     chg_file.close()
 
+def write_hdf5(chg_data):
+
+    #Get the name of the file from the current directory
+    dir_name = os.path.split(os.getcwd())[-1]
+
+    #Open the hdf5 file
+    chg_hdf5 = h5py.File(dir_name+'_CHG.hdf5', 'w')
+
+    #Write the data out in an hdf5 file
+    chg_hdf5.create_dataset('charge_density', data=chg_data)
+
+    #Close the file
+    chg_hdf5.close()
+
 def main():
 
     chg_data = read_CHG_file() 
-    
+    write_hdf5(chg_data)
 
 if __name__=="__main__":
     main()
